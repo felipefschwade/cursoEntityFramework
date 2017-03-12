@@ -18,9 +18,20 @@ namespace CursoEF
     
         public void Salva(Usuario usuario)
         {
-            this.Context.Usuarios.Add(usuario);
+            Context.Usuarios.Add(usuario);
             Context.SaveChanges();
             Context.Dispose();
+        }
+
+        public Usuario BuscaPorId(int id)
+        {
+            return Context.Usuarios.FirstOrDefault(u => u.ID == id);
+        }
+        
+        public void Remove(Usuario usuario)
+        {
+            Context.Remove(usuario);
+            Context.SaveChanges();
         }
 
     }

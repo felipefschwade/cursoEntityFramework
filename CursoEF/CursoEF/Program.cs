@@ -12,9 +12,9 @@ namespace CursoEF
         static void Main(string[] args)
         {
             UsuarioDAO dao = new UsuarioDAO();
-            Usuario outro = new Usuario() { Nome = "Outro", Senha = "123" };
-            dao.Salva(outro);
-            Console.WriteLine("salvou");
+            Usuario outro = dao.BuscaPorId(4);
+            dao.Remove(outro);
+            Console.WriteLine("Removeu!");
             Console.ReadKey();
         }
     }
