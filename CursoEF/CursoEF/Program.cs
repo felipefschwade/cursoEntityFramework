@@ -11,11 +11,9 @@ namespace CursoEF
     {
         static void Main(string[] args)
         {
-            EntidadesContext contexto = new EntidadesContext();
-            Usuario felipe = new Usuario() { Nome = "Felipe", Senha = "123" };
-            contexto.Usuarios.Add(felipe);
-            contexto.SaveChanges();
-            contexto.Dispose();
+            UsuarioDAO dao = new UsuarioDAO();
+            Usuario outro = new Usuario() { Nome = "Outro", Senha = "123" };
+            dao.Salva(outro);
             Console.WriteLine("salvou");
             Console.ReadKey();
         }
