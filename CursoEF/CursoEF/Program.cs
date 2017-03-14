@@ -11,11 +11,21 @@ namespace CursoEF
     {
         static void Main(string[] args)
         {
-            UsuarioDAO dao = new UsuarioDAO();
-            Usuario outro = dao.BuscaPorId(4);
-            dao.Remove(outro);
-            Console.WriteLine("Removeu!");
-            Console.ReadKey();
+            var contexto = new EntidadesContext();
+            var c = new Categoria
+            {
+                Nome = "Informatica"
+            };
+            contexto.Categorias.Add(c);
+            contexto.SaveChanges();
+            var produto = new Produto
+            {
+                Preco = 20,
+                Nome = "Mouse",
+                Categoria = c
+            };
+            contexto.Produtos.Add(produto);
+            contexto.SaveChanges();
         }
     }
 }

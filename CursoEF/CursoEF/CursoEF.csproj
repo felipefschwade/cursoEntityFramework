@@ -132,7 +132,13 @@
     <Compile Include="Migrations\20170311050315_criaTabelaUsuario.designer.cs">
       <DependentUpon>20170311050315_criaTabelaUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20170314043732_CriandoTabelaProdutoECategoria.cs" />
+    <Compile Include="Migrations\20170314043732_CriandoTabelaProdutoECategoria.designer.cs">
+      <DependentUpon>20170314043732_CriandoTabelaProdutoECategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\EntidadesContextModelSnapshot.cs" />
+    <Compile Include="Model\Categoria.cs" />
+    <Compile Include="Model\Produto.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

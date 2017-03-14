@@ -8,9 +8,10 @@ using CursoEF;
 namespace CursoEF.Migrations
 {
     [DbContext(typeof(EntidadesContext))]
-    partial class EntidadesContextModelSnapshot : ModelSnapshot
+    [Migration("20170314043732_CriandoTabelaProdutoECategoria")]
+    partial class CriandoTabelaProdutoECategoria
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
