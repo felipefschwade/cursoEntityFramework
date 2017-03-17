@@ -1,4 +1,5 @@
-﻿using CursoEF.Model;
+﻿using CursoEF.DAO;
+using CursoEF.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,21 +12,19 @@ namespace CursoEF
     {
         static void Main(string[] args)
         {
-            var contexto = new EntidadesContext();
-            var c = new Categoria
+            var dao = new ProdutoDAO();
+            var busca = dao.BuscaPorNomePrecoECategoria(null , 0, "Informatica");
+            foreach (var p in busca.ToList())
             {
-                Nome = "Informatica"
-            };
-            contexto.Categorias.Add(c);
-            contexto.SaveChanges();
-            var produto = new Produto
+                Console.WriteLine(p.Nome + p.Preco);
+            }
+            Console.WriteLine("####### BUSCA 2 ########");
+            busca = dao.BuscaPorMaiorEMenorPreco(200, 0);
+            foreach (var p in busca.ToList())
             {
-                Preco = 20,
-                Nome = "Mouse",
-                Categoria = c
-            };
-            contexto.Produtos.Add(produto);
-            contexto.SaveChanges();
+                Console.WriteLine(p.Nome + p.Preco);
+            }
+            Console.ReadKey();
         }
     }
 }
